@@ -14,7 +14,7 @@
     "lighthouse",
     "junit"
   ],
-  "author": ["lotuz", ""marceloll"],
+  "author": ["lotuz", "marceloll"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lotuz-dev/lighthouse-json-to-junit-xml/issues"
