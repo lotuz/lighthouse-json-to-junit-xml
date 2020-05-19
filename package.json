@@ -1,0 +1,26 @@
+{
+  "name": "@lotuz/lighthouse-json-to-junit-xml",
+  "version": "0.0.1",
+  "description": "Script to convert lighthouse json report to junit xml format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotuz-dev/lighthouse-json-to-junit-xml.git"
+  },
+  "keywords": [
+    "lighthouse",
+    "junit"
+  ],
+  "author": ["lotuz", ""marceloll"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lotuz-dev/lighthouse-json-to-junit-xml/issues"
+  },
+  "homepage": "https://github.com/lotuz-dev/lighthouse-json-to-junit-xml#readme",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
