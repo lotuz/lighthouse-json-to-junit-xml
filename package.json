@@ -1,6 +1,6 @@
 {
   "name": "@lotuz/lighthouse-json-to-junit-xml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Script to convert lighthouse json report to junit xml format",
   "main": "index.js",
   "scripts": {

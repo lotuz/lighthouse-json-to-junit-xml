@@ -87,9 +87,18 @@ const file = fs
         })
         .then(() => {
           // My job here is done!
-          process.exit(0);
+          if (failures) {
+            process.exit(1);
+          } else {
+            process.exit(0);
+          }
         });
     } else {
       console.log(reportXml);
+      if (failures) {
+        process.exit(1);
+      } else {
+        process.exit(0);
+      }
     }
   });
