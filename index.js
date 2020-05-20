@@ -17,7 +17,7 @@ const file = fs
   })
   .then(text => {
     const {categories} = JSON.parse(text);
-    const threshold = Math.max(1, parseFloat(args.threshold) || 0.8);
+    const threshold = Math.min(1, parseFloat(args.threshold) || 0.8);
     const fileOutputPath = args.o;
 
     const results = {};
@@ -44,35 +44,34 @@ const file = fs
   <testsuite id="0" name="lighthouse audit" errors="0" hostname="localhost" tests="5" failures="0" timestamp="${dateString}">
     <properties>
     </properties>
-    <testcase classname="Performance" name="score >= ${threshold}" time="0">
-    ${
+    <testcase classname="Performance" name="score >= ${threshold}" time="0">${
       results.performance
         ? ''
-        : `      <failure message="Performance score was less the threshold(${threshold})">Check full report for more info.</failure>`}
+        : `
+      <failure message="Performance score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
-    <testcase classname="Acessibility" name="score >= ${threshold}" time="0">
-    ${
+    <testcase classname="Acessibility" name="score >= ${threshold}" time="0">${
       results.accessibility
         ? ''
-        : `      <failure message="Acessibility score was less the threshold(${threshold})">Check full report for more info.</failure>`}
+        : `
+      <failure message="Acessibility score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
-    <testcase classname="Best Practices" name="score => ${threshold}" time="0">
-    ${
+    <testcase classname="Best Practices" name="score => ${threshold}" time="0">${
       results.bestPractices
         ? ''
         : `      <failure message="Best Practices score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
-    <testcase classname="SEO" name="score => ${threshold}" time="0">
-    ${
+    <testcase classname="SEO" name="score => ${threshold}" time="0">${
       results.seo
         ? ''
-        : `      <failure message="SEO score was less the threshold(${threshold})"> </failure>`}
+        : `
+      <failure message="SEO score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
-    <testcase classname="PWA" name="score >= ${threshold}" time="0">
-    ${
+    <testcase classname="PWA" name="score >= ${threshold}" time="0">${
       results.pwa
         ? ''
-        : `      <failure message="PWA score was less the threshold(${threshold})"> </failure>`}
+        : `
+      <failure message="PWA score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
     <system-out/>
     <system-err/>
