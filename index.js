@@ -39,8 +39,7 @@ const file = fs
     const dateString = date.toISOString();
 
     // write report xml
-    let reportXml = `
-<?xml version="1.0" encoding="UTF-8"?>
+    let reportXml = `<?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
   <testsuite id="0" name="lighthouse audit" errors="0" hostname="localhost" tests="5" failures="0" timestamp="${dateString}">
     <properties>
@@ -49,52 +48,36 @@ const file = fs
     ${
       results.performance
         ? ''
-        : `
-      <failure message="Performance score was less the threshold(${threshold})">Check full report for more info.</failure>
-      `
-    }
+        : `      <failure message="Performance score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
     <testcase classname="Acessibility" name="score >= ${threshold}" time="0">
     ${
       results.accessibility
         ? ''
-        : `
-      <failure message="Acessibility score was less the threshold(${threshold})">Check full report for more info.</failure>
-    `
-    }
+        : `      <failure message="Acessibility score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
     <testcase classname="Best Practices" name="score => ${threshold}" time="0">
     ${
       results.bestPractices
         ? ''
-        : `
-      <failure message="Best Practices score was less the threshold(${threshold})">Check full report for more info.</failure>
-    `
-    }
+        : `      <failure message="Best Practices score was less the threshold(${threshold})">Check full report for more info.</failure>`}
     </testcase>
     <testcase classname="SEO" name="score => ${threshold}" time="0">
     ${
       results.seo
         ? ''
-        : `
-      <failure message="SEO score was less the threshold(${threshold})"> </failure>
-    `
-    }
+        : `      <failure message="SEO score was less the threshold(${threshold})"> </failure>`}
     </testcase>
     <testcase classname="PWA" name="score >= ${threshold}" time="0">
     ${
       results.pwa
         ? ''
-        : `
-      <failure message="PWA score was less the threshold(${threshold})"> </failure>
-    `
-    }
+        : `      <failure message="PWA score was less the threshold(${threshold})"> </failure>`}
     </testcase>
     <system-out/>
     <system-err/>
   </testsuite>
-</testsuites>
-`;
+</testsuites>`;
 
     // write file on disc
     if (fileOutputPath) {
